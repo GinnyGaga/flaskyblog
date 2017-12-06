@@ -1,13 +1,19 @@
-"""make me better
+"""good
 
-Revision ID: ce37deae82ca
+Revision ID: 392041c795da
 Revises: 
-Create Date: 2017-12-06 21:24:38.023305
+Create Date: 2017-12-06 22:13:18.384554
 
 """
 from alembic import op
 import sqlalchemy as sa
 
+
+# revision identifiers, used by Alembic.
+revision = '392041c795da'
+down_revision = None
+branch_labels = None
+depends_on = None
 
 
 def upgrade():
