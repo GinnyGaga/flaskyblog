@@ -153,6 +153,7 @@ class User(UserMixin,db.Model):
 			return False
 		self.confirmed=True
 		db.session.add(self)
+		db.session.commit()
 		return True
 	
 	def generate_reset_token(self,expiration=3600):
@@ -170,6 +171,7 @@ class User(UserMixin,db.Model):
 			return False
 		self.password=new_password
 		db.session.add(self)
+		db.session.commit()
 		return True
 
 	def generate_email_change_token(self,new_email,expiration=3600):
@@ -194,6 +196,7 @@ class User(UserMixin,db.Model):
 		self.avatar_hash=hashlib.md5(
 			self.email.encode('utf-8')).hexdigest()
 		db.session.add(self)
+		db.session.commit()
 		return True
 	
 	def can(self,permissions):
@@ -205,6 +208,7 @@ class User(UserMixin,db.Model):
 	def ping(self):
 		self.last_seen=datetime.utcnow()
 		db.session.add(self)
+		db.session.commit()
 		
 	def gravatar(self,size=100,default='identicon',rating='g'):
 		if request.is_secure:
