@@ -49,6 +49,12 @@ def profile(length=25,profile_dir=None):
 	app.run()
 
 @manager.command
+def clearAlembic():
+	from flask_migrate import upgrade
+	from app.models import Alembic
+	Alembic.clear_A()
+
+@manager.command
 def deploy():
 	"""Run deployment tasks."""
 	from flask_migrate import upgrade
@@ -58,6 +64,8 @@ def deploy():
 	
 	Role.insert_roles()
 	User.add_self_follows()
+
+
 
 
 if __name__ == '__main__':
