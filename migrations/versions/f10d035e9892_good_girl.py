@@ -1,8 +1,8 @@
-"""Alembic; add new articles
+"""good girl
 
-Revision ID: 048e3abcab29
+Revision ID: f10d035e9892
 Revises: 
-Create Date: 2017-12-06 22:36:46.042358
+Create Date: 2017-12-07 19:59:05.326957
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '048e3abcab29'
+revision = 'f10d035e9892'
 down_revision = None
 branch_labels = None
 depends_on = None
